@@ -2,567 +2,214 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arthur Dorneles Ribeiro | Front-end Developer</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arthur Dorneles — Front-End Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ════════════════════════════════════
-       CANVAS DE PARTÍCULAS (background)
-  ════════════════════════════════════ -->
-  <canvas id="particles-canvas"></canvas>
-
-  <!-- ════════════════════════════════════
-       CURSOR PERSONALIZADO
-  ════════════════════════════════════ -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <!-- ════════════════════════════════════
-       NAVEGAÇÃO FIXA
-  ════════════════════════════════════ -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#home" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>Arthur<span class="logo-bracket">/&gt;</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#home"     data-section="home">Home</a></li>
-        <li><a href="#sobre"    data-section="sobre">Sobre</a></li>
-        <li><a href="#projetos" data-section="projetos">Projetos</a></li>
-        <li><a href="#skills"   data-section="skills">Skills</a></li>
-        <li><a href="#contato"  data-section="contato">Contato</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#home" class="nav-logo">AD<span>.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#tecnologias">Tecnologias</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
   </nav>
 
-  <!-- Menu mobile -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#home"     class="mobile-link">Home</a></li>
-      <li><a href="#sobre"    class="mobile-link">Sobre</a></li>
-      <li><a href="#projetos" class="mobile-link">Projetos</a></li>
-      <li><a href="#skills"   class="mobile-link">Skills</a></li>
-      <li><a href="#contato"  class="mobile-link">Contato</a></li>
-    </ul>
-  </div>
-
-  <!-- ════════════════════════════════════
-       SEÇÃO 1 — HOME
-  ════════════════════════════════════ -->
-  <section id="home" class="section hero-section">
-
-    <!-- Grid de linhas decorativas -->
-    <div class="hero-grid"></div>
-
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="grid-dots"></div>
+    </div>
     <div class="hero-content">
-
-      <!-- Tag decorativa -->
-      <p class="hero-tag">
-        <span class="tag-dot"></span>
-        <span class="tag-text" id="tagTyping"></span>
+      <p class="hero-eyebrow reveal">Front-End Developer</p>
+      <h1 class="hero-name reveal">Arthur<br>Dorneles</h1>
+      <p class="hero-desc reveal">
+        Crio sites que as pessoas realmente gostam de usar,<br>
+        com atenção ao design, ao detalhe e ao que faz sentido pra você.
       </p>
-
-      <!-- Nome principal -->
-      <h1 class="hero-name">
-        <span class="name-line">Arthur</span>
-        <span class="name-line accent-glow">Dorneles</span>
-        <span class="name-line">Ribeiro</span>
-      </h1>
-
-      <!-- Título -->
-      <h2 class="hero-title">
-        <span class="title-prefix">&gt;</span>
-        <span id="heroTitle">Front-end Developer</span>
-      </h2>
-
-      <!-- Frase de impacto -->
-      <p class="hero-phrase">
-        Transformando ideias em
-        <span class="phrase-highlight">experiências digitais</span>
-        que deixam marcas.
-      </p>
-
-      <!-- CTAs -->
-      <div class="hero-ctas">
-        <a href="#contato" class="btn-glow btn-primary">
-          <i class="fas fa-bolt"></i> Entrar em Contato
-        </a>
-        <a href="#projetos" class="btn-glow btn-outline">
-          <i class="fas fa-code"></i> Ver Projetos
-        </a>
-      </div>
-
-      <!-- Contador de stats -->
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num" data-target="4">0</span>
-          <span class="stat-label">Projetos</span>
-        </div>
-        <div class="stat-sep">|</div>
-        <div class="stat-item">
-          <span class="stat-num" data-target="1">0</span>
-          <span class="stat-label">Anos de Exp.</span>
-        </div>
-        <div class="stat-sep">|</div>
-        <div class="stat-item">
-          <span class="stat-num" data-target="100">0</span>
-          <span class="stat-label">% Dedicação</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Elemento decorativo lateral -->
-    <div class="hero-deco">
-      <div class="deco-hex-wrap">
-        <div class="deco-hex">
-          <div class="hex-inner">
-            <i class="fas fa-code deco-icon"></i>
-          </div>
-        </div>
-        <div class="hex-orbit orbit-1"></div>
-        <div class="hex-orbit orbit-2"></div>
-        <div class="hex-orbit orbit-3"></div>
+      <div class="hero-actions reveal">
+        <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+        <a href="#contato" class="btn btn-ghost">Falar comigo</a>
       </div>
     </div>
-
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator">
-      <span class="scroll-text">SCROLL</span>
-      <div class="scroll-line">
-        <div class="scroll-dot"></div>
-      </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════
-       SEÇÃO 2 — SOBRE
-  ════════════════════════════════════ -->
-  <section id="sobre" class="section sobre-section">
+  <!-- SOBRE -->
+  <section id="sobre" class="sobre">
     <div class="container">
-
-      <div class="section-header">
-        <span class="section-tag">// SISTEMA_01</span>
-        <h2 class="section-title">Sobre <span class="accent">Mim</span></h2>
-        <div class="section-line"></div>
-      </div>
-
       <div class="sobre-grid">
-
-        <!-- Card principal de bio -->
-        <div class="sobre-bio reveal">
-          <div class="bio-card">
-            <div class="bio-card-header">
-              <span class="bio-prompt">root@portfolio:~$</span>
-              <span class="bio-cmd blink-cursor"></span>
-            </div>
-            <div class="bio-card-body">
-              <p>
-                Sou desenvolvedor Front-end e gosto de criar interfaces que <span class="text-neon-cyan">impactam</span> e <span class="text-neon-purple">encantam</span>. Combino design e código para entregar experiências que vão além do comum.
-              </p>
-              <p>
-                Com sólida base em <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>, construo soluções modernas, performáticas e acessíveis
-              </p>
-
-            </div>
-            <div class="bio-card-footer">
-              <span class="status-dot"></span>
-              <span class="status-text">Disponível para projetos</span>
-            </div>
+        <div class="sobre-left reveal">
+          <p class="section-tag">// sobre mim</p>
+          <h2 class="section-title">Quem<br>sou eu?</h2>
+        </div>
+        <div class="sobre-right reveal">
+          <p>
+            Sou Arthur, desenvolvedor front-end de São Paulo. Comecei a programar por curiosidade, queria entender como sites eram feitos e isso virou algo que realmente me importa.
+          </p>
+          <p>
+            Trabalho com HTML, CSS e JavaScript para criar interfaces que funcionam bem em qualquer tela, têm visual limpo e são fáceis de usar. Gosto de projetos onde posso pensar tanto no design quanto no código.
+          </p>
+          <p>
+            Atualmente disponível para novos projetos: portfólios, landing pages, sites para negócios e melhorias visuais.
+          </p>
+          <div class="disponivel">
+            <span class="dot-pulse"></span> Disponível para projetos
           </div>
         </div>
-
-        <!-- Cards de stack -->
-        <div class="sobre-stack reveal">
-          <div class="stack-title">CORE STACK</div>
-          <div class="stack-cards">
-
-            <div class="stack-card" data-color="#e44d26">
-              <div class="stack-icon"><i class="fab fa-html5"></i></div>
-              <div class="stack-info">
-                <span class="stack-name">HTML5</span>
-                <span class="stack-desc">Semântica & Estrutura</span>
-              </div>
-              <div class="stack-level">AVANÇADO</div>
-            </div>
-
-            <div class="stack-card" data-color="#1572b6">
-              <div class="stack-icon"><i class="fab fa-css3-alt"></i></div>
-              <div class="stack-info">
-                <span class="stack-name">CSS3</span>
-                <span class="stack-desc">Estilo & Animações</span>
-              </div>
-              <div class="stack-level">AVANÇADO</div>
-            </div>
-
-            <div class="stack-card" data-color="#f7df1e">
-              <div class="stack-icon"><i class="fab fa-js"></i></div>
-              <div class="stack-info">
-                <span class="stack-name">JavaScript</span>
-                <span class="stack-desc">Lógica & Interação</span>
-              </div>
-              <div class="stack-level">AVANÇADO</div>
-            </div>
-
-            <div class="stack-card" data-color="#00d4ff">
-              <div class="stack-icon"><i class="fas fa-mobile-alt"></i></div>
-              <div class="stack-info">
-                <span class="stack-name">Responsive</span>
-                <span class="stack-desc">Mobile-First Design</span>
-              </div>
-              <div class="stack-level">PRO</div>
-            </div>
-
-            <div class="stack-card" data-color="#bd00ff">
-              <div class="stack-icon"><i class="fas fa-universal-access"></i></div>
-              <div class="stack-info">
-                <span class="stack-name">Acessibilidade</span>
-                <span class="stack-desc">WCAG & Inclusão</span>
-              </div>
-              <div class="stack-level">PRO</div>
-            </div>
-
-            <div class="stack-card" data-color="#00ff88">
-              <div class="stack-icon"><i class="fab fa-git-alt"></i></div>
-              <div class="stack-info">
-                <span class="stack-name">Git</span>
-                <span class="stack-desc">Versionamento</span>
-              </div>
-              <div class="stack-level">AVANÇADO</div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════
-       SEÇÃO 3 — PROJETOS
-  ════════════════════════════════════ -->
-  <section id="projetos" class="section projetos-section">
+  <!-- PROJETOS -->
+  <section id="projetos" class="projetos">
     <div class="container">
-
-      <div class="section-header">
-        <span class="section-tag">// SISTEMA_02</span>
-        <h2 class="section-title">Meus <span class="accent">Projetos</span></h2>
-        <div class="section-line"></div>
+      <div class="section-header reveal">
+        <p class="section-tag">// projetos</p>
+        <h2 class="section-title">O que já desenvolvi</h2>
       </div>
 
-      
-      <div class="projetos-grid">
-
-        <!-- Projeto 1 -->
-        <article class="projeto-card reveal" data-index="01">
-          <div class="projeto-img-wrap">
-            <div class="projeto-img projeto-img-1">
-              <div class="img-placeholder">
-                <i class="fas fa-laptop-code"></i>
-                <span>DEVSOLUTIONS</span>
-              </div>
+      <div class="projects-grid">
+        <a href="https://poketutu.github.io/DevSolutions-portfolio/" target="_blank" class="project-card reveal">
+          <div class="project-num">01</div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
             </div>
-            <div class="projeto-overlay">
-              <a href="https://poketutu.github.io/DevSolutions-portfolio/" target="_blank" class="overlay-btn" aria-label="Ver projeto">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-            <div class="projeto-num">01</div>
-          </div>
-          <div class="projeto-body">
-            <div class="projeto-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JS</span>
-            </div>
-            <h3 class="projeto-title">DevSolutions</h3>
-            <p class="projeto-desc">
-              Portfólio moderno para uma empresa de tecnologia, com visual profissional, animações suaves e foco em apresentação de serviços digitais.
-            </p>
-            <a href="https://poketutu.github.io/DevSolutions-portfolio/" target="_blank" class="btn-glow btn-sm">
-              <i class="fas fa-terminal"></i> Ver Projeto
-            </a>
-          </div>
-        </article>
-
-        <!-- Projeto 2 -->
-        <article class="projeto-card reveal" data-index="02">
-          <div class="projeto-img-wrap">
-            <div class="projeto-img projeto-img-2">
-              <div class="img-placeholder">
-                <i class="fas fa-layer-group"></i>
-                <span>FLOWLY</span>
-              </div>
-            </div>
-            <div class="projeto-overlay">
-              <a href="https://poketutu.github.io/flowly-portfolio/" target="_blank" class="overlay-btn" aria-label="Ver projeto">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-            <div class="projeto-num">02</div>
-          </div>
-          <div class="projeto-body">
-            <div class="projeto-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JS</span>
-            </div>
-            <h3 class="projeto-title">Flowly Portfolio</h3>
-            <p class="projeto-desc">
-              Landing page estilizada com design clean e responsivo, criada para destacar identidade visual, criatividade e experiência do usuário.
-            </p>
-            <a href="https://poketutu.github.io/flowly-portfolio/" target="_blank" class="btn-glow btn-sm btn-cyan">
-              <i class="fas fa-terminal"></i> Ver Projeto
-            </a>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════
-       SEÇÃO 4 — HABILIDADES
-  ════════════════════════════════════ -->
-  <section id="skills" class="section skills-section">
-    <div class="container">
-
-      <div class="section-header">
-        <span class="section-tag">// SISTEMA_03</span>
-        <h2 class="section-title">Minhas <span class="accent">Skills</span></h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="skills-grid">
-
-        <!-- Barras de progresso -->
-        <div class="skills-bars reveal">
-          <h3 class="skills-subtitle">Nível de Proficiência</h3>
-
-          <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-bar-name"><i class="fab fa-html5"></i> HTML5</span>
-              <span class="skill-bar-pct">95%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="95" data-color="#e44d26"></div>
+            <h3>DevSolutions</h3>
+            <p>Portfólio para empresa de tecnologia com visual profissional, animações e apresentação de serviços digitais.</p>
+            <div class="project-link">
+              Ver projeto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </div>
           </div>
+        </a>
 
-          <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-bar-name"><i class="fab fa-css3-alt"></i> CSS3</span>
-              <span class="skill-bar-pct">92%</span>
+        <a href="https://poketutu.github.io/flowly-portfolio/" target="_blank" class="project-card reveal">
+          <div class="project-num">02</div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
             </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="92" data-color="#1572b6"></div>
+            <h3>Flowly</h3>
+            <p>Landing page com design clean e responsivo, focada em identidade visual e experiência do usuário.</p>
+            <div class="project-link">
+              Ver projeto
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </div>
           </div>
-
-          <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-bar-name"><i class="fab fa-js"></i> JavaScript</span>
-              <span class="skill-bar-pct">85%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="85" data-color="#f7df1e"></div>
-            </div>
-          </div>
-
-          <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-bar-name"><i class="fas fa-mobile-alt"></i> Responsividade</span>
-              <span class="skill-bar-pct">90%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="90" data-color="#00d4ff"></div>
-            </div>
-          </div>
-
-          <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-bar-name"><i class="fas fa-paint-brush"></i> UI/UX Design</span>
-              <span class="skill-bar-pct">78%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="78" data-color="#bd00ff"></div>
-            </div>
-          </div>
-
-          <div class="skill-bar-item">
-            <div class="skill-bar-header">
-              <span class="skill-bar-name"><i class="fab fa-git-alt"></i> Git / GitHub</span>
-              <span class="skill-bar-pct">82%</span>
-            </div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="82" data-color="#00ff88"></div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Hexágonos de skills extras -->
-        <div class="skills-hex-grid reveal">
-          <h3 class="skills-subtitle">Ferramentas & Extras</h3>
-          <div class="hex-items">
-
-            <div class="hex-item">
-              <div class="hex-shape">
-                <i class="fas fa-bezier-curve"></i>
-              </div>
-              <span>Figma</span>
-            </div>
-            <div class="hex-item">
-              <div class="hex-shape">
-                <i class="fas fa-terminal"></i>
-              </div>
-              <span>VSCode</span>
-            </div>
-            <div class="hex-item">
-              <div class="hex-shape">
-                <i class="fas fa-search"></i>
-              </div>
-              <span>SEO</span>
-            </div>
-            <div class="hex-item">
-              <div class="hex-shape">
-                <i class="fas fa-tachometer-alt"></i>
-              </div>
-              <span>Performance</span>
-            </div>
-            <div class="hex-item">
-              <div class="hex-shape">
-                <i class="fas fa-lock"></i>
-              </div>
-              <span>Segurança</span>
-            </div>
-            <div class="hex-item">
-              <div class="hex-shape">
-                <i class="fas fa-layer-group"></i>
-              </div>
-              <span>Sass</span>
-            </div>
-            <div class="hex-item">
-              <div class="hex-shape">
-                <i class="fas fa-cubes"></i>
-              </div>
-              <span>API REST</span>
-            </div>
-            <div class="hex-item">
-              <div class="hex-shape">
-                <i class="fas fa-magic"></i>
-              </div>
-              <span>Animações</span>
-            </div>
-
-          </div>
-        </div>
-
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════
-       SEÇÃO 5 — CONTATO
-  ════════════════════════════════════ -->
-  <section id="contato" class="section contato-section">
+  <!-- TECNOLOGIAS -->
+  <section id="tecnologias" class="tecnologias">
     <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">// tecnologias</p>
+        <h2 class="section-title">Com o que trabalho</h2>
+      </div>
 
-      <div class="section-header">
-        <span class="section-tag">// SISTEMA_04</span>
-        <h2 class="section-title">Entre em <span class="accent">Contato</span></h2>
-        <div class="section-line"></div>
+      <div class="tech-grid">
+        <div class="tech-item reveal">
+          <div class="tech-icon html-icon">5</div>
+          <span>HTML5</span>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-icon css-icon">3</div>
+          <span>CSS3</span>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-icon js-icon">JS</div>
+          <span>JavaScript</span>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-icon git-icon">
+            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M23.546 10.93L13.067.452a1.55 1.55 0 00-2.188 0L8.708 2.627l2.76 2.76a1.838 1.838 0 012.327 2.341l2.658 2.66a1.838 1.838 0 11-1.097 1.045l-2.48-2.48v6.511a1.84 1.84 0 11-1.523-.044V9.303a1.84 1.84 0 01-.996-2.41L7.64 4.144 .453 11.33a1.55 1.55 0 000 2.188l10.48 10.478a1.55 1.55 0 002.188 0l10.425-10.427a1.55 1.55 0 000-2.187"/></svg>
+          </div>
+          <span>Git</span>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-icon gh-icon">
+            <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </div>
+          <span>GitHub</span>
+        </div>
+        <div class="tech-item reveal">
+          <div class="tech-icon ui-icon">✦</div>
+          <span>UI / UX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contato">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-tag">// contato</p>
+        <h2 class="section-title">Tem um projeto?<br>Fala comigo.</h2>
       </div>
 
       <div class="contato-grid">
+        <a href="https://wa.me/5511913737261" target="_blank" class="contato-card reveal">
+          <div class="contato-icon wpp">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L.057 23.215a.75.75 0 00.916.937l5.521-1.448A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 01-5.002-1.383l-.36-.214-3.727.977.997-3.635-.234-.374A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          </div>
+          <div class="contato-info">
+            <small>WhatsApp</small>
+            <strong>(11) 91373-7261</strong>
+          </div>
+          <svg class="contato-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
 
-        <div class="contato-text reveal">
-          <p class="contato-phrase">
-            Tem um projeto em mente? Vamos construir algo <span class="text-neon-cyan">épico</span> juntos.
-          </p>
-          <p class="contato-sub">
-            Respondo em até <strong>24h</strong>. Sem enrolação — direto ao ponto.
-          </p>
-        </div>
+        <a href="mailto:arthurdornelesribeiro@gmail.com" class="contato-card reveal">
+          <div class="contato-icon mail">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contato-info">
+            <small>E-mail</small>
+            <strong>arthurdornelesribeiro@gmail.com</strong>
+          </div>
+          <svg class="contato-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
 
-        <div class="contato-links reveal">
-
-          <!-- WhatsApp -->
-          <a href="https://wa.me/5511913737261" target="_blank" rel="noopener" class="contact-card contact-wpp">
-            <div class="contact-icon">
-              <i class="fab fa-whatsapp"></i>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">WhatsApp</span>
-              <span class="contact-value">+55 (11) 91373-7261</span>
-            </div>
-            <i class="fas fa-chevron-right contact-arrow"></i>
-          </a>
-
-          <!-- Email -->
-          <a href="mailto:arthurdornelesribeiro@gmail.com" class="contact-card contact-email">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">E-mail</span>
-              <span class="contact-value">arthurdornelesribeiro@gmail.com</span>
-            </div>
-            <i class="fas fa-chevron-right contact-arrow"></i>
-          </a>
-
-          <!-- GitHub -->
-          <a href="https://github.com/poketutu" target="_blank" rel="noopener" class="contact-card contact-github">
-            <div class="contact-icon">
-              <i class="fab fa-github"></i>
-            </div>
-            <div class="contact-info">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">github.com/poketutu</span>
-            </div>
-            <i class="fas fa-chevron-right contact-arrow"></i>
-          </a>
-
-        </div>
-
+        <a href="https://github.com/poketutu" target="_blank" class="contato-card reveal">
+          <div class="contato-icon gh">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </div>
+          <div class="contato-info">
+            <small>GitHub</small>
+            <strong>github.com/poketutu</strong>
+          </div>
+          <svg class="contato-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <span class="footer-logo">
-        <span class="logo-bracket">&lt;</span>Arthur<span class="logo-bracket">/&gt;</span>
-      </span>
-      <p class="footer-text">
-        Desenvolvido com <i class="fas fa-heart footer-heart"></i> por <span class="text-neon-purple">Arthur</span> &mdash; <span id="footerYear"></span>
-      </p>
-      <p class="footer-code">// código é arte</p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Feito por <span>Arthur Dorneles</span> — HTML, CSS & JavaScript</p>
     </div>
   </footer>
-
-  <!-- Botão Voltar ao Topo -->
-  <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
-    <i class="fas fa-chevron-up"></i>
-  </button>
 
   <script src="script.js"></script>
 </body>
